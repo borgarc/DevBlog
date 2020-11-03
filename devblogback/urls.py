@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import include, url
+from django.urls import path
 
 urlpatterns = [
+    url(r'', include('posts.urls')),
     url(r'', include('people.urls')),
     url(r'^admin/', admin.site.urls),
+    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^api-auth/', include('rest_framework.urls')),
 ]
