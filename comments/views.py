@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from comments.models import Comments
-from comments.serialiozers import CommentsSerializer
+from comments.models import Comment
+from comments.serialiozers import CommentSerializer
 from rest_framework import viewsets
 
-class CommentsView(viewsets.ModelViewSet):
-    queryset = Comments.objects.all()
-    serializer_class = CommentsSerializer
+class CommentView(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
