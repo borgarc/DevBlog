@@ -6,4 +6,4 @@ class Person(models.Model):
     nick = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
     email = models.CharField(max_length=50)
-    isAdmin = models.BooleanField(default=False)
+    is_admin = models.BooleanField(default=False)
