@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from people.models import Person
+from django.contrib.auth.models import User
 
 class PersonSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Person
-        fields = ('id', 'name', 'second_name', 'nick', 'password', 'email', 'is_admin')
+        model = User
+        fields = ('id', 'first_name', 'last_name', 'username', 'password', 'email', 'is_superuser', 'is_active')
