@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from posts.models import Post
 from posts.serializers import PostSerializer
-from rest_framework import viewsets
+from devblogback.views import GetUserForPostView
+from rest_framework.response import Response
 
-class PostView(viewsets.ModelViewSet):
+class PostView(GetUserForPostView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    
